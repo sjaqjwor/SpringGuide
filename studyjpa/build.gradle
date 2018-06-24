@@ -31,4 +31,6 @@ dependencies {
 	compile("org.springframework.boot:spring-boot-starter-data-rest")
 	compile("com.h2database:h2")
 	testCompile("junit:junit")
+	compile "ch.qos.logback:logback-classic:1.2.0"
+	runtime "org.slf4j:jcl-over-slf4j:1.7.12"
 }
