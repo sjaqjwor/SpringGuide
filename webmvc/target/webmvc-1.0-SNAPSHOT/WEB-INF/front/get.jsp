@@ -12,7 +12,9 @@
 </head>
 <body>
 
-        hi
+    ${user.name}
+    ${user.email}
+
 
 </body>
 </html>

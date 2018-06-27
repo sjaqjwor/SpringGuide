@@ -8,10 +8,18 @@ import javax.servlet.http.HttpServletResponse;
 
 public class ContentController extends MultiActionController {
 
-   public ModelAndView list(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse){
-       ModelAndView modelAndView = new ModelAndView();
-       modelAndView.setViewName("get");
+    private ContentMapper contentMapper;
+
+
+    public void setContentMapper(ContentMapper contentMapper) {
+        this.contentMapper = contentMapper;
+    }
+
+    public ModelAndView list(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("user",contentMapper.selectUser().get(0));
+        modelAndView.setViewName("get");
         return modelAndView;
-   }
+    }
 
 }

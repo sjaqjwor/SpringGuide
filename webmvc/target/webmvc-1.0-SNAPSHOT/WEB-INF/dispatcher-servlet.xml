@@ -27,6 +27,12 @@
 
     <bean id="ContentController" class="api.ContentController">
         <property name="methodNameResolver" ref="propsResolver"/>
+        <property name="ContentMapper" ref="ContentMapper"></property>
+    </bean>
+
+    <bean id="ContentMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="api.ContentMapper" />
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
     </bean>
 
     <bean id="propsResolver" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
